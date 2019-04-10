@@ -1,0 +1,23 @@
+<h3>Eat</h3>
+
+<ul>
+    {{#each burger}}
+        {{#unless devoured}}
+            {{> burgers/burger-block devoure=true}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h3>Eaten</h3>
+
+
+<ul>
+    {{#each burger}}
+        {{#if devoured}}
+            {{> burgers/burger-block devoure=false}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+
+<button id="TEST">testing</button>
