@@ -8,7 +8,7 @@ router.get("/", function (req, res) {
             burger: data
         };
         res.render("index", hbsObj);
-        console.log("controller data[0]: " + hbsObj.burger[0].burger_name);
+        // console.log("controller data[0]: " + hbsObj.burger[0].burger_name);
     });
 });
 
@@ -21,7 +21,7 @@ router.post("/api/burger", function (req, res) {
 router.put("/api/burger/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
-    console.log("condition", condition);
+    // console.log("condition", condition);
 
     console.table(req.body)
 
