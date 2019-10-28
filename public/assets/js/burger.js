@@ -1,7 +1,3 @@
-$("#TEST").on("click", function (event) {
-    console.log("Clicked the button");
-})
-
 $(document).on("click", ".change-devoure", function (event) {
 
     // If the data-newdevoure is true
