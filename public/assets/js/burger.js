@@ -3,13 +3,10 @@ $(document).on("click", ".change-devoure", function (event) {
     // If the data-newdevoure is true
     if($(this).data("newdevoure")) {
         // Change data-newdevoure to be false on click
-        $(this).data("newdevoure", true);
-        var temp = $(this).data("newdevoure");
 
         var newTemp = {
-            devoure: temp
+            devoure: $(this).data("newdevoure")
         }
-
 
         console.table(newTemp);
 
@@ -18,32 +15,21 @@ $(document).on("click", ".change-devoure", function (event) {
             type: "PUT",
             data: newTemp
         }).then(function(){
-            console.log("Changed devoure to ", temp);
             location.reload(); 
         })
 
-        console.log("After change: " + $(this).data("newdevoure"));
-
     } else {
-        $(this).data("newdevoure", false);
-        var test = false;
-
-
         var newTest = {
-            devoure: test
+            devoure: $(this).data("newdevoure")
         }
 
         console.table(newTest);
-
-
-        console.log("new temp: " + newTest.devoure);
 
         //Ajax call to update database
         $.ajax("/api/burger/" + $(this).data("id"), {
             type: "PUT",
             data: { devoure: false }
         }).then(function(){
-            console.log("Changed devoure to ", temp);
             location.reload();
         })
 
