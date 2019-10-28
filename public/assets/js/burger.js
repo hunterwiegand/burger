@@ -12,7 +12,7 @@ $(document).on("click", ".change-devoure", function (event) {
 
         //Ajax call to update database
         $.ajax("/api/burger/" + $(this).data("id"), {
-            type: "PUT",
+            type: "POST",
             data: newTemp
         }).then(function(){
             location.reload(); 
@@ -27,7 +27,7 @@ $(document).on("click", ".change-devoure", function (event) {
 
         //Ajax call to update database
         $.ajax("/api/burger/" + $(this).data("id"), {
-            type: "PUT",
+            type: "POST",
             data: { devoure: false }
         }).then(function(){
             location.reload();
