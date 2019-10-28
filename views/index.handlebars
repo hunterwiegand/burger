@@ -40,40 +40,69 @@
 
 
 {{!-- Menu --}}
-<div class="card w-75">
-  <div class="card-body">
-    <h5 class="card-title">Menu</h5>
-    <p class="card-text">Choose from our divine menu what you would like to eat.</p>
-    <ul>
-      {{#each burger}}
-      {{#unless devoured}}
-      {{> burgers/burger-block devoure=true}}
-      {{/unless}}
-      {{/each}}
-    </ul>
-  </div>
-</div>
-
-{{!-- Prep For Consumption --}}
-<div class="card w-75">
-  <div class="card-body">
-    <h5 class="card-title">Prep for Consumption</h5>
-    <p class="card-text">Here is where you can prep the dish so it will be ready on the menu.</p>
-    <ul>
-      {{#each burger}}
-      {{#if devoured}}
-      {{> burgers/burger-block devoure=false}}
-      {{/if}}
-      {{/each}}
-    </ul>
-  </div>
-</div>
-
-
-
 <div class="container">
   <div class="row">
-    {{!-- Add to Menu --}}
+    <div class="col">
+      <div class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">Add To Menu</h5>
+          <p class="card-text">Don't like what you see on our menu? Go ahead and add your own dishes then!</p>
+          <form class="create-form">
+            <div class="form-group">
+              <label for="ca">Dish Name:</label>
+              <input type="text" id="ca" name="burger_name">
+            </div>
+
+            <div class="form-group">
+              <input type="radio" name="devoured" value="0" checked> Dish is ready to serve!<br>
+              <input type="radio" name="devoured" value="1"> Needs to cook first!<br>
+              <button type="submit">Add to Menu</button>
+            </div>
+            </form>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col">
+      <div class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">Menu</h5>
+          <p class="card-text">Choose from our divine menu what you would like to eat.</p>
+          <ul>
+            {{#each burger}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoure=true}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Prep For Consumption --}}
+    <div class="col">
+      <div class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">Prep for Consumption</h5>
+          <p class="card-text">Here is where you can prep the dish so it will be ready on the menu.</p>
+          <ul>
+            {{#each burger}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoure=false}}
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{!-- <div class="container">
+  <div class="row">
+   
     <div class="col-4">
       <div class="card w-75">
         <div class="card-body">
@@ -95,4 +124,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
